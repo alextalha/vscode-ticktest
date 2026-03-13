@@ -71,23 +71,23 @@ export class TestChecklistProvider implements vscode.WebviewViewProvider {
       }
       case 'deleteGroup': {
         this.storage.deleteGroup(msg.taskId, msg.groupId)
-        break
+        return // webview já atualizou localmente
       }
       case 'addTest': {
         this.storage.addTest(msg.taskId, msg.groupId, msg.description)
-        break
+        return // webview já atualizou localmente
       }
       case 'deleteTest': {
         this.storage.deleteTest(msg.taskId, msg.groupId, msg.testId)
-        break
+        return // webview já atualizou localmente
       }
       case 'updateTestStatus': {
         this.storage.updateTestStatus(msg.taskId, msg.testId, msg.status as TestStatus)
-        break
+        return // não reconstruir HTML — webview já atualizou localmente
       }
       case 'updateTestNotes': {
         this.storage.updateTestNotes(msg.taskId, msg.testId, msg.notes)
-        break
+        return // não reconstruir HTML — webview já atualizou localmente
       }
       case 'requestCreateTask': {
         const taskId = await vscode.window.showInputBox({ prompt: 'ID da tarefa (ex: RH-5321)', placeHolder: 'RH-XXXX' })
