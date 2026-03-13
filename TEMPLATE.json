@@ -1,0 +1,13 @@
+{
+  "$instructions": "Preencha este JSON com casos de teste agrupados por categoria. Retorne SOMENTE o JSON preenchido, sem explicações. Cada grupo é uma categoria de testes. Cada test tem description (português) e notes (opcional, para detalhes ou pré-condições).",
+  "taskId": "RH-XXXX",
+  "taskName": "",
+  "groups": [
+    {
+      "name": "Nome da Categoria",
+      "tests": [
+        { "description": "Descrição do caso de teste em português", "notes": "" }
+      ]
+    }
+  ]
+}

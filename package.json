@@ -1,0 +1,58 @@
+{
+  "name": "ticktest",
+  "displayName": "Ticktest",
+  "description": "Gerencie checklists de teste por ticket/tarefa direto no VSCode",
+  "version": "0.3.0",
+  "publisher": "alextalha",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alextalha/vscode-ticktest"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other", "Testing"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ticktest",
+          "title": "Ticktest",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "ticktest": [
+        {
+          "type": "webview",
+          "id": "ticktest.panel",
+          "name": "Test Checklist"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ticktest.addTask",
+        "title": "Ticktest: Nova Tarefa"
+      },
+      {
+        "command": "ticktest.detectTask",
+        "title": "Ticktest: Detectar Tarefa do Branch"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}
